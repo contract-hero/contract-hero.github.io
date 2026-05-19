@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contract Hero — Claude Code plugins for Sui Move and developer tooling</title>
+  <meta name="description" content="A small set of Claude Code plugins maintained under Contract Hero: Sui Move tooling (sui-pilot), a multi-agent build system (code-forge), a Codex bridge, an HTML deliverables toolkit, and interactive coding courses driven by an MCP runtime.">
+  <link rel="canonical" href="https://contract-hero.github.io/">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e5e7eb;
+      --accent: #0f4c75;
+      --accent-soft: #e6eef4;
+      --code-bg: #f1f5f9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    a { color: var(--accent); }
+    a:hover { text-decoration: underline; }
+
+    header.site {
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    header.site .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      flex: none;
+    }
+    nav.site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+    nav.site-nav a:hover { color: var(--accent); }
+
+    section { padding: 56px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .hero {
+      padding-top: 72px;
+      padding-bottom: 56px;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(28px, 4.2vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px 0;
+      max-width: 24ch;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .lede {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 64ch;
+      margin: 0 0 28px 0;
+    }
+    .install {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      overflow-x: auto;
+      max-width: 640px;
+    }
+    .install .c { color: var(--muted); }
+    .install .v { color: var(--accent); }
+
+    h2 {
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px 0;
+    }
+    .sec-sub {
+      color: var(--muted);
+      margin: 0 0 28px 0;
+      max-width: 70ch;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 20px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .card .name {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      color: var(--accent);
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+    .card .title {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 10px 0;
+    }
+    .card .desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      flex: 1;
+      margin: 0 0 16px 0;
+    }
+    .card .links {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+      align-items: center;
+    }
+    .card .links a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .card .links a:hover { text-decoration: underline; }
+    .card .links .muted { color: var(--muted); }
+
+    footer.site {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      padding: 28px 0 36px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer.site .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer.site a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="28" height="28" rx="6" fill="#0f4c75"/>
+        <path d="M10 16 L14 20 L22 12" stroke="#fafaf7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span>Contract Hero</span>
+    </a>
+    <nav class="site-nav">
+      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
+      <a href="https://github.com/contract-hero">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Claude Code plugins</span>
+    <h1>Plugins for <em>Sui Move</em> and developer tooling.</h1>
+    <p class="lede">
+      A small set of Claude Code plugins — Sui Move tooling with bundled docs and an LSP-backed MCP server, a multi-agent build system, a bridge to OpenAI Codex, an HTML deliverables toolkit, and interactive coding courses that run inside a session.
+    </p>
+    <pre class="install"><span class="c"># in a Claude Code session</span>
+/plugin marketplace add <span class="v">contract-hero/plugin-marketplace</span>
+/plugin install <span class="v">sui-pilot@contract-hero</span></pre>
+  </div>
+</section>
+
+<section id="plugins">
+  <div class="wrap">
+    <h2>Developer tooling</h2>
+    <p class="sec-sub">Sui Move stack helpers and general-purpose Claude Code extensions.</p>
+    <div class="grid">
+
+      <article class="card">
+        <p class="name">sui-pilot</p>
+        <h3 class="title">Sui Move development plugin</h3>
+        <p class="desc">LSP integration, bundled docs (Sui, Walrus, Seal, TS SDK, Move Book, sui-prover), code quality and review skills, plus formal-verification specs.</p>
+        <div class="links">
+          <a href="https://contract-hero.github.io/sui-pilot/">Visit site →</a>
+          <a class="muted" href="https://github.com/contract-hero/sui-pilot">Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="name">code-forge</p>
+        <h3 class="title">Multi-agent build system</h3>
+        <p class="desc">TDD-as-phase orchestration with script-coordinated parallel review, a best-of-N implementer, and the forge-guard hook for discipline.</p>
+        <div class="links">
+          <a href="https://contract-hero.github.io/code-forge/">Visit site →</a>
+          <a class="muted" href="https://github.com/contract-hero/code-forge">Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="name">codex-bridge</p>
+        <h3 class="title">Bridge to OpenAI Codex CLI</h3>
+        <p class="desc">/codex for direct calls and /claudex for multi-round Claude ↔ Codex prompt refinement before plan-mode execution.</p>
+        <div class="links">
+          <a href="https://github.com/contract-hero/codex-bridge">View repo →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="name">toolkit</p>
+        <h3 class="title">HTML deliverable toolkit</h3>
+        <p class="desc">Bundles html-artifact (one-off visual deliverables), publish-html (turn a local .html into a shareable URL), for-dummies (auto-derived intros), and move-call-chains.</p>
+        <div class="links">
+          <a href="https://github.com/contract-hero/toolkit">View repo →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 style="margin-top: 56px;">Courses</h2>
+    <p class="sec-sub">A learning framework (Agentic Community College) plus content plugins that teach specific domains end-to-end.</p>
+    <div class="grid">
+
+      <article class="card">
+        <p class="name">agentic-community-college</p>
+        <h3 class="title">Learning framework</h3>
+        <p class="desc">Runs reference-seeded coding lessons through MCP. Ships course-engine, course-conductor, course-creator, and lesson-creator skills with a declarative probe runtime.</p>
+        <div class="links">
+          <a href="https://contract-hero.github.io/agentic-community-college/">Visit site →</a>
+          <a class="muted" href="https://github.com/contract-hero/agentic-community-college">Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="name">acc-deepbook-course</p>
+        <h3 class="title">Sui DeepBook course</h3>
+        <p class="desc">Hands-on lessons that walk learners through building Sui DeepBook integrations end-to-end. Requires the agentic-community-college plugin to run.</p>
+        <div class="links">
+          <a href="https://contract-hero.github.io/acc-deepbook-course/">Visit site →</a>
+          <a class="muted" href="https://github.com/contract-hero/acc-deepbook-course">Repo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="name">acc-evm-wal</p>
+        <h3 class="title">Walrus storage on EVM</h3>
+        <p class="desc">A short Foundry-based lesson that teaches Walrus decentralized storage by walking learners through building a WalrusAnchor Solidity contract.</p>
+        <div class="links">
+          <a href="https://github.com/contract-hero/acc-evm-wal">View repo →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Contract Hero · Claude Code plugins, maintained openly.</span>
+    <span>
+      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
+      · <a href="https://github.com/contract-hero">GitHub org</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

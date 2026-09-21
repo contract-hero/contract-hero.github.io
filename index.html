@@ -1,326 +1,645 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contract Hero — Claude Code plugins for Sui Move and developer tooling</title>
-  <meta name="description" content="A small set of Claude Code plugins maintained under Contract Hero: Sui Move tooling (sui-pilot), a multi-agent build system (code-forge), a Codex bridge, an HTML deliverables toolkit, and interactive coding courses driven by an MCP runtime.">
-  <link rel="canonical" href="https://contract-hero.github.io/">
-  <style>
-    :root {
-      --bg: #fafaf7;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e5e7eb;
-      --accent: #0f4c75;
-      --accent-soft: #e6eef4;
-      --code-bg: #f1f5f9;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 17px;
-      line-height: 1.55;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    a { color: var(--accent); }
-    a:hover { text-decoration: underline; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Contract Hero — everything Álvaro Lillo has built</title>
+<meta name="description" content="Talks, workshop repos, Sky Pie, Claude Code plugins, token standards, courses and games by Álvaro Lillo Igualada, in one place.">
+<link rel="canonical" href="https://contract-hero.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contract-hero.github.io/">
+<meta property="og:title" content="Contract Hero — everything Álvaro Lillo has built">
+<meta property="og:description" content="Talks, workshop repos, Sky Pie, Claude Code plugins, token standards, courses and games, in one place.">
+<meta property="og:site_name" content="Contract Hero">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@TheContractHero">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 1024%22 role=%22img%22 aria-label=%22Sky Pie mark%22 font-family=%22ui-monospace,Menlo,monospace%22 font-size=%2212%22 font-weight=%22900%22 xml:space=%22preserve%22%3E%3Cg transform=%22translate(545,625) matrix(1,0,-0.07,0.98,0,0) translate(-545,-625)%22%3E%3Csymbol id=%22r%22 overflow=%22visible%22%3E%3Ctext y=%22100%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a r%3C/text%3E%3Ctext y=%22128%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Etitle%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a %3C/text%3E%3Ctext y=%22156%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Epie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;revie%3C/text%3E%3Ctext y=%22184%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eom for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class%3C/text%3E%3Ctext y=%22212%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3En.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B%3C/text%3E%3Ctext y=%22240%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eiew.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/sectio%3C/text%3E%3Ctext y=%22268%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eta-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/sm%3C/text%3E%3Ctext y=%22296%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Etml%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;htm%3C/text%3E%3Ctext y=%22324%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body %3C/text%3E%3Ctext y=%22352%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eter%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;htm%3C/text%3E%3Ctext y=%22380%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3En%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your ag%3C/text%3E%3Ctext y=%22408%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ey%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/%3C/text%3E%3Ctext y=%22436%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ey Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%3C/text%3E%3Ctext y=%22464%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Es%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%3C/text%3E%3Ctext y=%22492%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ei%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot;%3C/text%3E%3Ctext y=%22520%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3En%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and op%3C/text%3E%3Ctext y=%22548%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Enst pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;%3C/text%3E%3Ctext y=%22576%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ee%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky%3C/text%3E%3Ctext y=%22604%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section c%3C/text%3E%3Ctext y=%22632%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eoctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a read%3C/text%3E%3Ctext y=%22660%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ele%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a hre%3C/text%3E%3Ctext y=%22688%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.m%3C/text%3E%3Ctext y=%22716%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Efor what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;p%3C/text%3E%3Ctext y=%22744%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Etml%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B ki%3C/text%3E%3Ctext y=%22772%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;%3C/text%3E%3Ctext y=%22800%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ekind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;code%26gt;const pie = bake(%7B kind: %26quot;html%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%3C/text%3E%3Ctext y=%22828%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26quot;, slice: %26quot;code%26quot; %7D);%26lt;/code%26gt;%26lt;/pre%26gt;%26lt;/section%26gt;%26lt;footer%26gt;%26lt;small%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html l%3C/text%3E%3Ctext y=%22856%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Emall%26gt;free and open source. Apache-2.0%26lt;/small%26gt;%26lt;/footer%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body cla%3C/text%3E%3Ctext y=%22884%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26gt;%26lt;/main%26gt;%26lt;/body%26gt;%26lt;/html%26gt;%26lt;!doctype html%26gt;%26lt;html lang=%26quot;en%26quot;%26gt;%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%3C/text%3E%3Ctext y=%22912%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26lt;head%26gt;%26lt;title%26gt;Sky Pie%26lt;/title%26gt;%26lt;/head%26gt;%26lt;body class=%26quot;sky%26quot;%26gt;%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent%3C/text%3E%3Ctext y=%22940%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3E%26lt;main%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;html%26quot;%26gt;%26lt;h1%26gt;Sky Pie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;%3C/text%3E%3Ctext y=%22968%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Eie%26lt;/h1%26gt;%26lt;p%26gt;a reading room for what your agent writes%26lt;/p%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/%3C/text%3E%3Ctext y=%22996%22 textLength=%221024%22 lengthAdjust=%22spacingAndGlyphs%22%3Ep%26gt;%26lt;ul%26gt;%26lt;li%26gt;%26lt;a href=%26quot;plan.html%26quot;%26gt;plan.html%26lt;/a%26gt;%26lt;/li%26gt;%26lt;li%26gt;%26lt;a href=%26quot;review.md%26quot;%26gt;review.md%26lt;/a%26gt;%26lt;/li%26gt;%26lt;/ul%26gt;%26lt;/section%26gt;%26lt;section class=%26quot;pie%26quot; data-kind=%26quot;code%26quot;%26gt;%26lt;pre%26gt;%26lt;c%3C/text%3E%3C/symbol%3E%3CclipPath id=%22c0%22%3E%3Cpath d=%22M545.0,625.0 L386.0,764.9 L386.0,894.9 L545.0,755.0 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c0)%22%3E%3Cpath d=%22M545.0,625.0 L386.0,764.9 L386.0,894.9 L545.0,755.0 Z%22 fill=%22%236b7ea6%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%236b7ea6%22/%3E%3C/g%3E%3CclipPath id=%22c1%22%3E%3Cpath d=%22M545.0,625.0 L685.8,770.7 L685.8,900.7 L545.0,755.0 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c1)%22%3E%3Cpath d=%22M545.0,625.0 L685.8,770.7 L685.8,900.7 L545.0,755.0 Z%22 fill=%22%236b7ea6%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%236b7ea6%22/%3E%3C/g%3E%3CclipPath id=%22c2%22%3E%3Cpath d=%22M845.0,625.0 A300,165 0 0 1 685.8,770.7 L685.8,900.7 A300,165 0 0 0 845.0,755.0 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c2)%22%3E%3Cpath d=%22M845.0,625.0 A300,165 0 0 1 685.8,770.7 L685.8,900.7 A300,165 0 0 0 845.0,755.0 Z%22 fill=%22%23080e1c%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%23080e1c%22/%3E%3C/g%3E%3CclipPath id=%22c3%22%3E%3Cpath d=%22M386.0,764.9 A300,165 0 0 1 245.0,625.0 L245.0,755.0 A300,165 0 0 0 386.0,894.9 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c3)%22%3E%3Cpath d=%22M386.0,764.9 A300,165 0 0 1 245.0,625.0 L245.0,755.0 A300,165 0 0 0 386.0,894.9 Z%22 fill=%22%23080e1c%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%23080e1c%22/%3E%3C/g%3E%3CclipPath id=%22c4%22%3E%3Cpath d=%22M545.0,625.0 L386.0,764.9 A300,165 0 1 1 809.9,547.5 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c4)%22%3E%3Cpath d=%22M545.0,625.0 L386.0,764.9 A300,165 0 1 1 809.9,547.5 Z%22 fill=%22%2316223a%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%2316223a%22/%3E%3C/g%3E%3CclipPath id=%22c5%22%3E%3Cpath d=%22M545.0,625.0 L809.9,547.5 A300,165 0 0 1 685.8,770.7 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c5)%22%3E%3Cpath d=%22M545.0,625.0 L809.9,547.5 A300,165 0 0 1 685.8,770.7 Z%22 fill=%22%234a5a7a%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%234a5a7a%22/%3E%3C/g%3E%3CclipPath id=%22c6%22%3E%3Cpath d=%22M550.0,255.0 L428.0,405.7 L428.0,535.7 L550.0,385.0 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c6)%22%3E%3Cpath d=%22M550.0,255.0 L428.0,405.7 L428.0,535.7 L550.0,385.0 Z%22 fill=%22%233d4f78%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%233d4f78%22/%3E%3C/g%3E%3CclipPath id=%22c7%22%3E%3Cpath d=%22M428.0,405.7 A300,165 0 0 1 251.6,272.2 L251.6,402.2 A300,165 0 0 0 428.0,535.7 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c7)%22%3E%3Cpath d=%22M428.0,405.7 A300,165 0 0 1 251.6,272.2 L251.6,402.2 A300,165 0 0 0 428.0,535.7 Z%22 fill=%22%23080e1c%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%23080e1c%22/%3E%3C/g%3E%3CclipPath id=%22c8%22%3E%3Cpath d=%22M550.0,255.0 L428.0,405.7 A300,165 0 0 1 251.6,272.2 Z%22/%3E%3C/clipPath%3E%3Cg clip-path=%22url(%23c8)%22%3E%3Cpath d=%22M550.0,255.0 L428.0,405.7 A300,165 0 0 1 251.6,272.2 Z%22 fill=%22%238797b8%22 fill-opacity=%22.42%22/%3E%3Cuse href=%22%23r%22 fill=%22%238797b8%22/%3E%3C/g%3E%3Cpath d=%22M545.0,625.0 L809.9,547.5%22 stroke=%22%23fff%22 stroke-width=%227%22 fill=%22none%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M386.0,764.9 A300,165 0 0 1 245.0,625.0%22 stroke=%22%23c89a5c%22 stroke-width=%226%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M845.0,625.0 A300,165 0 0 1 685.8,770.7%22 stroke=%22%23c89a5c%22 stroke-width=%226%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M685.8,770.7 L545.0,625.0 L386.0,764.9%22 stroke=%22%23fff%22 stroke-width=%227%22 fill=%22none%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M685.8,900.7 L545.0,755.0 L386.0,894.9%22 stroke=%22%23fff%22 stroke-width=%227%22 fill=%22none%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M545.0,625.0 L545.0,755.0%22 stroke=%22%23fff%22 stroke-width=%227%22 fill=%22none%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M383.9,766.8 A304,167 0 1 1 687.7,772.6%22 stroke=%22%23c89a5c%22 stroke-opacity=%22.9%22 stroke-width=%2218%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M428.0,405.7 A300,165 0 0 1 251.6,272.2%22 stroke=%22%23c89a5c%22 stroke-width=%226%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M428.0,405.7 L550.0,255.0 L550.0,385.0 L428.0,535.7%22 stroke=%22%23fff%22 stroke-width=%227%22 fill=%22none%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M426.4,407.7 A304,167 0 0 1 247.7,272.5%22 stroke=%22%23c89a5c%22 stroke-opacity=%22.9%22 stroke-width=%2218%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Sky Pie tokens, copied from skypie-core/docs/mockup/index.html (day set). */
+:root {
+  --sky-top: #0b3d91;
+  --sky-mid: #1e5bbf;
+  --sky-bottom: #3f86e0;
+  --sky-line: rgba(11, 61, 145, 0.35);
+  --sky-ink: #ffffff;
+  --sky-ink-dim: rgba(255, 255, 255, 0.72);
+  --pie-tone-1: #ffffff;
+  --pie-tone-2: #cfe3f6;
+  --pie-tone-3: #7fb0e8;
+  --pie-wall: #8fb8e6;
+  --crust: #c89a5c;
+  --accent-sunset: #ff8a3d;
+  --accent-rose: #ff5e7e;
+  --accent-gold: #ffd166;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --font-ui: "Space Grotesk", -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* page (light) */
+  --page-bg: #f3f7fc;
+  --card-bg: #ffffff;
+  --ink: #0b1f3a;
+  --ink-dim: #40546f;
+  --line: #d6e2f0;
+  --link: #0b3d91;
+  --link-hover: #d9541c;
+  --code-bg: #e8f0fa;
+}
 
-    header.site {
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    header.site .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-    .brand-mark {
-      width: 28px;
-      height: 28px;
-      flex: none;
-    }
-    nav.site-nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
-    }
-    nav.site-nav a:hover { color: var(--accent); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 17px; line-height: 1.55;
+  color: var(--ink); background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--link-hover); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent-gold); outline-offset: 2px; border-radius: 4px; }
+code, .mono { font-family: var(--font-mono); font-size: 0.86em; }
+code { background: var(--code-bg); padding: 1px 6px; border-radius: 5px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: #fff; color: var(--ink); padding: 8px 12px; z-index: 50; }
+.skip:focus { left: 8px; }
 
-    section { padding: 56px 0; }
-    section + section { border-top: 1px solid var(--border); }
+/* ---- header: the sky ------------------------------------------------- */
+.sky {
+  position: relative; overflow: hidden;
+  color: var(--sky-ink);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-bottom) 100%);
+  padding: 56px 0 64px;
+  isolation: isolate;
+}
+.clouds { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.cloud { position: absolute; left: var(--x); top: var(--y); width: var(--w, 150px); transform: translate(-50%, -50%); }
+/* the drift: translate only, per-pie duration and keyframe set (from the mockup) */
+.drift {
+  position: relative;
+  transform: translate(var(--jx, 0), var(--jy, 0));
+  animation: var(--drift-name, drift-a) var(--drift-dur, 60s) ease-in-out infinite alternate;
+  animation-delay: var(--drift-delay, 0s);
+  will-change: transform;
+}
+@keyframes drift-a { from { transform: translate(calc(var(--jx, 0) - 18px), calc(var(--jy, 0) + 6px)); } to { transform: translate(calc(var(--jx, 0) + 22px), calc(var(--jy, 0) - 10px)); } }
+@keyframes drift-b { from { transform: translate(calc(var(--jx, 0) + 16px), calc(var(--jy, 0) - 8px)); } to { transform: translate(calc(var(--jx, 0) - 20px), calc(var(--jy, 0) + 8px)); } }
+@keyframes drift-c { from { transform: translate(calc(var(--jx, 0) - 10px), calc(var(--jy, 0) - 12px)); } to { transform: translate(calc(var(--jx, 0) + 26px), calc(var(--jy, 0) + 4px)); } }
+@keyframes drift-d { from { transform: translate(calc(var(--jx, 0) + 24px), calc(var(--jy, 0) + 10px)); } to { transform: translate(calc(var(--jx, 0) - 14px), calc(var(--jy, 0) - 6px)); } }
+.pie-cloud { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.22)); }
+.pie-cloud text { font-family: var(--font-mono); font-weight: 600; letter-spacing: 0.02em; }
+.pie-cloud .wall { fill: var(--pie-wall); }
+.pie-cloud .face { opacity: 0.62; }
+.pie-cloud .wall-outline, .pie-cloud .crust { fill: none; stroke: var(--crust); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pie-cloud .sep { fill: none; stroke: var(--sky-line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.pie-cloud .wedge[data-front="true"] .sep { stroke: var(--accent-sunset); stroke-width: 2; }
 
-    .hero {
-      padding-top: 72px;
-      padding-bottom: 56px;
-    }
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-    }
-    h1 {
-      font-size: clamp(28px, 4.2vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin: 0 0 18px 0;
-      max-width: 24ch;
-    }
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    .lede {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 64ch;
-      margin: 0 0 28px 0;
-    }
-    .install {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text);
-      overflow-x: auto;
-      max-width: 640px;
-    }
-    .install .c { color: var(--muted); }
-    .install .v { color: var(--accent); }
+.hero { position: relative; z-index: 1; }
+.brand { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; }
+.brand .mark { width: 56px; height: 56px; flex: 0 0 auto; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
+.brand .name { font: 600 15px/1.2 var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--sky-ink-dim); }
+.hero h1 { font-size: clamp(30px, 5vw, 50px); line-height: 1.08; margin: 0 0 14px; max-width: 18ch; letter-spacing: -0.01em; }
+.hero p { font-size: 19px; max-width: 58ch; margin: 0 0 24px; color: var(--sky-ink); text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.links { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.links a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 999px;
+  background: rgba(0,0,0,0.26); border: 1px solid rgba(255,255,255,0.32);
+  color: var(--sky-ink); text-decoration: none; font: 500 14px/1 var(--font-mono);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.links a:hover { background: var(--accent-sunset); border-color: var(--accent-sunset); color: #1a0d00; }
+.links a.primary { background: var(--accent-sunset); border-color: var(--accent-sunset); color: #1a0d00; font-weight: 600; }
+.links a.primary:hover { background: var(--accent-gold); border-color: var(--accent-gold); }
 
-    h2 {
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      margin: 0 0 8px 0;
-    }
-    .sec-sub {
-      color: var(--muted);
-      margin: 0 0 28px 0;
-      max-width: 70ch;
-    }
+/* ---- nav strip -------------------------------------------------------- */
+.toc { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 10; }
+.toc ul { display: flex; gap: 4px; overflow-x: auto; margin: 0; padding: 8px 0; list-style: none; scrollbar-width: none; }
+.toc ul::-webkit-scrollbar { display: none; }
+.toc a { display: block; padding: 6px 10px; white-space: nowrap; text-decoration: none; font: 500 13px/1 var(--font-mono); color: var(--ink-dim); border-radius: 6px; }
+.toc a:hover { background: var(--code-bg); color: var(--link); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 20px 18px 20px;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-    .card .name {
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      font-size: 14px;
-      color: var(--accent);
-      margin: 0 0 8px 0;
-      font-weight: 600;
-    }
-    .card .title {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin: 0 0 10px 0;
-    }
-    .card .desc {
-      font-size: 14.5px;
-      color: var(--muted);
-      flex: 1;
-      margin: 0 0 16px 0;
-    }
-    .card .links {
-      display: flex;
-      gap: 14px;
-      font-size: 14px;
-      align-items: center;
-    }
-    .card .links a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .card .links a:hover { text-decoration: underline; }
-    .card .links .muted { color: var(--muted); }
+/* ---- sections ---------------------------------------------------------- */
+main section { padding: 48px 0 8px; }
+main section:last-of-type { padding-bottom: 56px; }
+h2 { font-size: 26px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
+h2 .idx { font: 500 13px/1 var(--font-mono); color: var(--accent-sunset); vertical-align: middle; margin-right: 8px; }
+.lede { margin: 0 0 22px; color: var(--ink-dim); max-width: 70ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.card {
+  background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; min-width: 0;
+  transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+}
+.card:hover { border-color: var(--pie-tone-3); box-shadow: 0 8px 24px rgba(11, 61, 145, 0.10); }
+.card h3 { margin: 0; font-size: 17px; line-height: 1.3; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.card h3 a { text-decoration: none; overflow-wrap: anywhere; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { margin: 0; color: var(--ink-dim); font-size: 15px; }
+.card .meta { font: 500 12px/1 var(--font-mono); color: var(--ink-dim); display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+.tag { display: inline-block; font: 500 11px/1 var(--font-mono); padding: 3px 7px; border-radius: 999px; background: var(--code-bg); color: var(--link); }
+.tag.warm { background: #fff0e6; color: #a63d0b; }
+.tag.muted { background: #eef1f5; color: var(--ink-dim); }
 
-    footer.site {
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-      padding: 28px 0 36px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    footer.site .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer.site a { color: var(--muted); }
-  </style>
+/* video */
+.video { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.frame { background: var(--card-bg); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+.frame .ratio { position: relative; aspect-ratio: 16 / 9; width: 100%; border-radius: 8px; overflow: hidden; background: #0b1f3a; }
+.frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.frame h3 { margin: 12px 0 2px; font-size: 16px; }
+.frame p { margin: 0; font-size: 14px; color: var(--ink-dim); }
+.frame.todo .ratio { display: grid; place-items: center; color: var(--sky-ink-dim); background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom)); font: 500 13px/1.4 var(--font-mono); text-align: center; padding: 20px; }
+
+/* featured product */
+.feature {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 60%, var(--sky-bottom) 100%);
+  color: var(--sky-ink); border-radius: 18px; padding: 28px; overflow: hidden; position: relative;
+}
+.feature h3 { margin: 0 0 8px; font-size: 24px; }
+.feature p { margin: 0 0 14px; max-width: 52ch; }
+.feature .links a { font-size: 13px; }
+.feature .art { display: grid; place-items: center; min-height: 180px; }
+.feature .art svg { width: min(260px, 70%); height: auto; }
+.repos { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.repos a { font: 500 13px/1 var(--font-mono); color: var(--sky-ink); text-decoration: none; background: rgba(0,0,0,0.22); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; padding: 6px 9px; }
+.repos a:hover { background: rgba(0,0,0,0.4); }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--ink-dim); font-size: 14px; }
+footer ul { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 0 0 10px; list-style: none; font-family: var(--font-mono); font-size: 13px; }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .sky { padding: 40px 0 48px; }
+  .hero p { font-size: 17px; }
+  .video, .feature { grid-template-columns: 1fr; }
+  .feature { padding: 22px; }
+  .sky { padding-top: 120px; }
+  .cloud { left: var(--px); top: var(--py); width: var(--pw, 96px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .drift { animation: none; }
+  .card { transition: none; }
+}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="/">
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="2" y="2" width="28" height="28" rx="6" fill="#0f4c75"/>
-        <path d="M10 16 L14 20 L22 12" stroke="#fafaf7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      <span>Contract Hero</span>
-    </a>
-    <nav class="site-nav">
-      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
-      <a href="https://github.com/contract-hero">GitHub</a>
-    </nav>
+<header class="sky">
+  <div class="clouds" id="clouds" aria-hidden="true"></div>
+  <div class="wrap hero">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 1024 1024" aria-hidden="true"><use href="#skypie-mark"/></svg>
+      <span class="name">Contract Hero</span>
+    </div>
+    <h1>Everything Álvaro Lillo has built.</h1>
+    <p>Talks and workshops, the repos behind them, Sky Pie, Claude Code plugins, token standards, courses and a game. Less marketing than <a href="https://contracthero.dev" style="color:inherit">contracthero.dev</a>; this page is the bucket.</p>
+    <ul class="links">
+      <li><a class="primary" href="https://contracthero.dev">contracthero.dev</a></li>
+      <li><a href="https://contracthero.dev/resume.pdf">résumé (PDF)</a></li>
+      <li><a href="https://github.com/alilloig" rel="me">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/alilloig" rel="me">LinkedIn</a></li>
+      <li><a href="https://x.com/TheContractHero" rel="me">X</a></li>
+    </ul>
   </div>
 </header>
 
-<section class="hero">
+<nav class="toc" aria-label="Sections">
   <div class="wrap">
-    <span class="eyebrow">Claude Code plugins</span>
-    <h1>Plugins for <em>Sui Move</em> and developer tooling.</h1>
-    <p class="lede">
-      A small set of Claude Code plugins — Sui Move tooling with bundled docs and an LSP-backed MCP server, a multi-agent build system, a bridge to OpenAI Codex, an HTML deliverables toolkit, and interactive coding courses that run inside a session.
-    </p>
-    <pre class="install"><span class="c"># in a Claude Code session</span>
-/plugin marketplace add <span class="v">contract-hero/plugin-marketplace</span>
-/plugin install <span class="v">sui-pilot@contract-hero</span></pre>
+    <ul>
+      <li><a href="#talks">talks</a></li>
+      <li><a href="#workshops">workshop repos</a></li>
+      <li><a href="#products">products</a></li>
+      <li><a href="#plugins">plugins</a></li>
+      <li><a href="#standards">standards</a></li>
+      <li><a href="#courses">courses</a></li>
+      <li><a href="#games">games</a></li>
+    </ul>
   </div>
-</section>
+</nav>
 
-<section id="plugins">
-  <div class="wrap">
-    <h2>Developer tooling</h2>
-    <p class="sec-sub">Sui Move stack helpers and general-purpose Claude Code extensions.</p>
-    <div class="grid">
-
-      <article class="card">
-        <p class="name">sui-pilot</p>
-        <h3 class="title">Sui Move development plugin</h3>
-        <p class="desc">LSP integration, bundled docs (Sui, Walrus, Seal, TS SDK, Move Book, sui-prover), code quality and review skills, plus formal-verification specs.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/sui-pilot/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/sui-pilot">Repo</a>
+<main id="main">
+  <section id="talks" class="wrap">
+    <h2><span class="idx">01</span>Talks and workshops</h2>
+    <p class="lede">Sui workshops delivered live at hackathons. Bootcamps: five days of Move and Sui plus a one-day hackathon, in Bucharest, Paris and Ankara.</p>
+    <div class="video">
+      <div class="frame">
+        <div class="ratio">
+          <iframe src="https://www.youtube-nocookie.com/embed/g0zjIF_lbdQ" title="EVM x Sui | ETHGlobal" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-      </article>
-
-      <article class="card">
-        <p class="name">code-forge</p>
-        <h3 class="title">Multi-agent build system</h3>
-        <p class="desc">TDD-as-phase orchestration with script-coordinated parallel review, a best-of-N implementer, and the forge-guard hook for discipline.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/code-forge/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/code-forge">Repo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">codex-bridge</p>
-        <h3 class="title">Bridge to OpenAI Codex CLI</h3>
-        <p class="desc">/codex for direct calls and /claudex for multi-round Claude ↔ Codex prompt refinement before plan-mode execution.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/codex-bridge">View repo →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">toolkit</p>
-        <h3 class="title">HTML deliverable toolkit</h3>
-        <p class="desc">Bundles html-artifact (one-off visual deliverables), publish-html (turn a local .html into a shareable URL), for-dummies (auto-derived intros), and move-call-chains.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/toolkit">View repo →</a>
-        </div>
-      </article>
-
+        <h3>EVM x Sui | ETHGlobal</h3>
+        <p>Workshop for EVM developers who start on Sui. <a href="https://www.youtube.com/watch?v=g0zjIF_lbdQ">Watch on YouTube</a>.</p>
+      </div>
+      <div class="frame todo" data-todo="second ETHGlobal workshop video URL (see profile.md open TODOs)">
+        <div class="ratio">second workshop video<br>coming soon</div>
+        <h3>Second ETHGlobal workshop</h3>
+        <p>Recording pending. <!-- TODO: paste the second workshop video URL here --></p>
+      </div>
     </div>
+  </section>
 
-    <h2 style="margin-top: 56px;">Courses</h2>
-    <p class="sec-sub">A learning framework (Agentic Community College) plus content plugins that teach specific domains end-to-end.</p>
-    <div class="grid">
+  <section id="workshops" class="wrap">
+    <h2><span class="idx">02</span>Workshop example repos</h2>
+    <p class="lede">Code written for workshops and hackathon tracks. Each repo is small on purpose: one idea, runnable.</p>
+    <ul class="grid">
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/sui-pbo">sui-pbo</a></h3>
+        <p>Reference implementation of the Physical Backed Objects (PBO) standard for Sui, the Sui port of EIP-5791.</p>
+        <div class="meta"><span class="tag">Move</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/deepbook-snippets">deepbook-snippets</a></h3>
+        <p>Reference snippets for DeepBook, written while evaluating the DeepBook sandbox.</p>
+        <div class="meta"><span class="tag">TypeScript</span><span class="tag">DeepBook</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/flow-hack">flow-hack</a></h3>
+        <p>An attempt to reconstruct the Flow blockchain hack of 27 December 2025.</p>
+        <div class="meta"><span class="tag">Cadence</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/x402">x402</a> <span class="tag muted">fork</span></h3>
+        <p>A payments protocol for the internet, built on HTTP. A fork kept for workshop use.</p>
+        <div class="meta"><span class="tag">fork</span><span class="tag">HTTP</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/walrus-code-memory">walrus-code-memory</a> <span class="tag muted">fork</span></h3>
+        <p>An iteration on Walrus memory for storing Claude Code and Codex self-generated memories.</p>
+        <div class="meta"><span class="tag">Walrus</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/acc-evm-wal">acc-evm-wal</a></h3>
+        <p>Workshop material packaged as an ACC course: 6 lessons, 75 tests.</p>
+        <div class="meta"><span class="tag">course</span><span class="tag">Walrus</span></div>
+      </li>
+    </ul>
+  </section>
 
-      <article class="card">
-        <p class="name">agentic-community-college</p>
-        <h3 class="title">Learning framework</h3>
-        <p class="desc">Runs reference-seeded coding lessons through MCP. Ships course-engine, course-conductor, course-creator, and lesson-creator skills with a declarative probe runtime.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/agentic-community-college/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/agentic-community-college">Repo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">acc-deepbook-course</p>
-        <h3 class="title">Sui DeepBook course</h3>
-        <p class="desc">Hands-on lessons that walk learners through building Sui DeepBook integrations end-to-end. Requires the agentic-community-college plugin to run.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/acc-deepbook-course/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/acc-deepbook-course">Repo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">acc-evm-wal</p>
-        <h3 class="title">Walrus storage on EVM</h3>
-        <p class="desc">A short Foundry-based lesson that teaches Walrus decentralized storage by walking learners through building a WalrusAnchor Solidity contract.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/acc-evm-wal">View repo →</a>
-        </div>
-      </article>
-
+  <section id="products" class="wrap">
+    <h2><span class="idx">03</span>Products</h2>
+    <p class="lede">Software with an install path, not only a repo.</p>
+    <div class="feature">
+      <div>
+        <h3>Sky Pie</h3>
+        <p>A reading room for the files your agents make. Open local HTML and Markdown, follow changes as they happen, and send an artifact directly to another device. Free and open source, Apache-2.0.</p>
+        <ul class="links">
+          <li><a class="primary" href="https://contract-hero.github.io/skypie-core/" data-todo="404 until skypie-core GitHub Pages is enabled after the brand/landing PR merges">Sky Pie landing</a></li>
+          <li><a href="https://contract-hero.github.io/skypie-core/desktop/" data-todo="404 until skypie-core GitHub Pages is enabled after the brand/landing PR merges">macOS app</a></li>
+          <li><a href="https://contract-hero.github.io/skypie-core/ios/" data-todo="404 until skypie-core GitHub Pages is enabled after the brand/landing PR merges">iOS companion</a></li>
+        </ul>
+        <ul class="repos" aria-label="Sky Pie repositories">
+          <li><a href="https://github.com/contract-hero/skypie-core">skypie-core</a></li>
+          <li><a href="https://github.com/contract-hero/skypie-desktop">skypie-desktop</a></li>
+          <li><a href="https://github.com/contract-hero/skypie-ios">skypie-ios</a></li>
+          <li><a href="https://github.com/contract-hero/skypie-plugin">skypie-plugin</a></li>
+        </ul>
+      </div>
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 1024 1024"><use href="#skypie-mark"/></svg>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site">
+  <section id="plugins" class="wrap">
+    <h2><span class="idx">04</span>Claude Code plugins</h2>
+    <p class="lede">All of them install from one marketplace: <code>/plugin marketplace add contract-hero/plugin-marketplace</code>. Browse the <a href="https://contract-hero.github.io/plugin-marketplace/">marketplace page</a>.</p>
+    <ul class="grid">
+      <li class="card">
+        <h3><a href="https://contract-hero.github.io/sui-pilot/">sui-pilot</a></h3>
+        <p>Claude Code plugin for the full Sui stack: bundled docs across 6 corpora, a Move LSP bridge, a Sui Prover wrapper, commands and skills for code quality, security review and verification.</p>
+        <div class="meta"><a href="https://github.com/contract-hero/sui-pilot">repo</a><span class="tag">Sui</span><span class="tag">Move</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://contract-hero.github.io/code-forge/">code-forge</a></h3>
+        <p>Multi-agent build system: design spec, interactive architecture playground and docs.</p>
+        <div class="meta"><a href="https://github.com/contract-hero/code-forge">repo</a><span class="tag">agents</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://contract-hero.github.io/agentic-community-college/">agentic-community-college</a></h3>
+        <p>Course runtime for Claude Code: a course plugin splits a lesson into chapters defined by tests, and a conductor agent implements each chapter in a seeded workspace. An exploratory proof of concept.</p>
+        <div class="meta"><a href="https://github.com/contract-hero/agentic-community-college">repo</a><span class="tag">MCP</span><span class="tag">courses</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/toolkit">toolkit</a></h3>
+        <p>Self-contained HTML deliverable skills: html-artifact, publish-html, for-dummies, move-call-chains.</p>
+        <div class="meta"><span class="tag">skills</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/skypie-plugin">skypie</a></h3>
+        <p>The Sky Pie plugin: MCP server launcher, pairing hook and an artifact-links skill. <code>/plugin install skypie@contract-hero</code></p>
+        <div class="meta"><span class="tag">MCP</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/codex-bridge">codex-bridge</a></h3>
+        <p>Bridge to the OpenAI Codex CLI from Claude Code: <code>/codex</code> execution and <code>/claudex</code> multi-round prompt refinement.</p>
+        <div class="meta"><span class="tag">Codex</span></div>
+      </li>
+      <li class="card">
+        <h3>sui-agent-tank <span class="tag muted">private</span></h3>
+        <p>Not public yet.</p>
+        <div class="meta"><span class="tag">Sui</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="standards" class="wrap">
+    <h2><span class="idx">05</span>Open source standards</h2>
+    <p class="lede">Work merged upstream into ecosystem repositories.</p>
+    <ul class="grid">
+      <li class="card">
+        <h3><a href="https://github.com/onflow/flow-ft">Fungible Token Switchboard</a></h3>
+        <p>One receiver capability for any token. Contract, tests and docs; part of the Flow FT standard, deployed on mainnet at <code>0xf233dcee88fe0abe</code>.</p>
+        <div class="meta"><span class="tag">onflow/flow-ft</span><span class="tag">Cadence</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/onflow/flow-ft">Fungible Tokens Metadata FLIP</a></h3>
+        <p>The FLIP (merged August 2022) and the FungibleTokenMetadataViews contract, with the views implemented on ExampleToken.</p>
+        <div class="meta"><span class="tag">onflow/flow-ft</span><span class="tag">FLIP</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/onflow/band-oracle-contracts">Band Protocol oracle for Flow</a></h3>
+        <p>Port of the Band oracle from Solidity to Cadence: testnet, mainnet-ready, then the Cadence 1.0 upgrade.</p>
+        <div class="meta"><span class="tag">onflow/band-oracle-contracts</span><span class="tag">Cadence</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/alilloig/merkle-mountain-range-contracts">Merkle Mountain Ranges</a></h3>
+        <p>Merkle Mountain Range contracts in Move and Cadence.</p>
+        <div class="meta"><span class="tag">Move</span><span class="tag">Cadence</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="courses" class="wrap">
+    <h2><span class="idx">06</span>Courses</h2>
+    <p class="lede">Courses that run inside Claude Code on the Agentic Community College runtime. Chapters are defined by tests; the agent implements them with you.</p>
+    <ul class="grid">
+      <li class="card">
+        <h3><a href="https://contract-hero.github.io/acc-deepbook-course/">acc-deepbook-course</a></h3>
+        <p>Hands-on lessons that walk through building Sui DeepBook integrations end to end. 4 lessons.</p>
+        <div class="meta"><a href="https://github.com/contract-hero/acc-deepbook-course">repo</a><span class="tag">DeepBook</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/acc-evm-wal">acc-evm-wal</a></h3>
+        <p>6 lessons, 75 tests.</p>
+        <div class="meta"><span class="tag">Walrus</span></div>
+      </li>
+      <li class="card">
+        <h3><a href="https://github.com/contract-hero/acc-claude-sdk">acc-claude-sdk</a> <span class="tag warm">in progress</span></h3>
+        <p>Build agents with the Claude Agent SDK (TypeScript), chapter by chapter, with tests as the contract.</p>
+        <div class="meta"><span class="tag">Claude Agent SDK</span></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="games" class="wrap">
+    <h2><span class="idx">07</span>Games</h2>
+    <ul class="grid">
+      <li class="card">
+        <h3><a href="https://github.com/alilloig/trade-wars">Trade Wars</a></h3>
+        <p>A fully on-chain, massively multiplayer, interplanetary trading game on Sui: produce, trade, and expand your reach among the stars.</p>
+        <div class="meta"><span class="tag">Move</span><span class="tag">TypeScript</span></div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
   <div class="wrap">
-    <span>Contract Hero · Claude Code plugins, maintained openly.</span>
-    <span>
-      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
-      · <a href="https://github.com/contract-hero">GitHub org</a>
-    </span>
+    <ul>
+      <li><a href="https://contracthero.dev">contracthero.dev</a></li>
+      <li><a href="https://contracthero.dev/resume.pdf">résumé</a></li>
+      <li><a href="https://github.com/alilloig">github</a></li>
+      <li><a href="https://github.com/contract-hero">contract-hero org</a></li>
+      <li><a href="https://www.linkedin.com/in/alilloig">linkedin</a></li>
+      <li><a href="https://x.com/TheContractHero">x</a></li>
+      <li><a href="mailto:alilloig@gmail.com">mail</a></li>
+    </ul>
+    <p>Álvaro Lillo Igualada. Madrid, Spain, remote. Every fact on this page comes from the same profile that feeds contracthero.dev and the résumé.</p>
   </div>
 </footer>
 
+<!-- Sky Pie mark, icon v2 simplified (side view, lifted slice, text rows). Referenced twice via <use>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="skypie-mark" viewBox="0 0 1024 1024" font-family="ui-monospace,Menlo,monospace" font-size="12" font-weight="900" xml:space="preserve"><g transform="translate(545,625) matrix(1,0,-0.07,0.98,0,0) translate(-545,-625)"><symbol id="r" overflow="visible"><text y="100" textLength="1024" lengthAdjust="spacingAndGlyphs">&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a r</text><text y="128" textLength="1024" lengthAdjust="spacingAndGlyphs">title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a </text><text y="156" textLength="1024" lengthAdjust="spacingAndGlyphs">pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;revie</text><text y="184" textLength="1024" lengthAdjust="spacingAndGlyphs">om for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class</text><text y="212" textLength="1024" lengthAdjust="spacingAndGlyphs">n.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({</text><text y="240" textLength="1024" lengthAdjust="spacingAndGlyphs">iew.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/sectio</text><text y="268" textLength="1024" lengthAdjust="spacingAndGlyphs">ta-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/sm</text><text y="296" textLength="1024" lengthAdjust="spacingAndGlyphs">tml&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;htm</text><text y="324" textLength="1024" lengthAdjust="spacingAndGlyphs">&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body </text><text y="352" textLength="1024" lengthAdjust="spacingAndGlyphs">ter&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;htm</text><text y="380" textLength="1024" lengthAdjust="spacingAndGlyphs">n&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your ag</text><text y="408" textLength="1024" lengthAdjust="spacingAndGlyphs">y&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/</text><text y="436" textLength="1024" lengthAdjust="spacingAndGlyphs">y Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul</text><text y="464" textLength="1024" lengthAdjust="spacingAndGlyphs">s&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre</text><text y="492" textLength="1024" lengthAdjust="spacingAndGlyphs">i&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot;</text><text y="520" textLength="1024" lengthAdjust="spacingAndGlyphs">n&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and op</text><text y="548" textLength="1024" lengthAdjust="spacingAndGlyphs">nst pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;</text><text y="576" textLength="1024" lengthAdjust="spacingAndGlyphs">e&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky</text><text y="604" textLength="1024" lengthAdjust="spacingAndGlyphs">. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section c</text><text y="632" textLength="1024" lengthAdjust="spacingAndGlyphs">octype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a read</text><text y="660" textLength="1024" lengthAdjust="spacingAndGlyphs">le&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a hre</text><text y="688" textLength="1024" lengthAdjust="spacingAndGlyphs">&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.m</text><text y="716" textLength="1024" lengthAdjust="spacingAndGlyphs">for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;p</text><text y="744" textLength="1024" lengthAdjust="spacingAndGlyphs">tml&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ ki</text><text y="772" textLength="1024" lengthAdjust="spacingAndGlyphs">.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;</text><text y="800" textLength="1024" lengthAdjust="spacingAndGlyphs">kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;code&gt;const pie = bake({ kind: &quot;html&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small</text><text y="828" textLength="1024" lengthAdjust="spacingAndGlyphs">&quot;, slice: &quot;code&quot; });&lt;/code&gt;&lt;/pre&gt;&lt;/section&gt;&lt;footer&gt;&lt;small&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html l</text><text y="856" textLength="1024" lengthAdjust="spacingAndGlyphs">mall&gt;free and open source. Apache-2.0&lt;/small&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body cla</text><text y="884" textLength="1024" lengthAdjust="spacingAndGlyphs">&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;</text><text y="912" textLength="1024" lengthAdjust="spacingAndGlyphs">&lt;head&gt;&lt;title&gt;Sky Pie&lt;/title&gt;&lt;/head&gt;&lt;body class=&quot;sky&quot;&gt;&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent</text><text y="940" textLength="1024" lengthAdjust="spacingAndGlyphs">&lt;main&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;html&quot;&gt;&lt;h1&gt;Sky Pie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;</text><text y="968" textLength="1024" lengthAdjust="spacingAndGlyphs">ie&lt;/h1&gt;&lt;p&gt;a reading room for what your agent writes&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/</text><text y="996" textLength="1024" lengthAdjust="spacingAndGlyphs">p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;plan.html&quot;&gt;plan.html&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;review.md&quot;&gt;review.md&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;section class=&quot;pie&quot; data-kind=&quot;code&quot;&gt;&lt;pre&gt;&lt;c</text></symbol><clipPath id="c0"><path d="M545.0,625.0 L386.0,764.9 L386.0,894.9 L545.0,755.0 Z"/></clipPath><g clip-path="url(#c0)"><path d="M545.0,625.0 L386.0,764.9 L386.0,894.9 L545.0,755.0 Z" fill="#6b7ea6" fill-opacity=".42"/><use href="#r" fill="#6b7ea6"/></g><clipPath id="c1"><path d="M545.0,625.0 L685.8,770.7 L685.8,900.7 L545.0,755.0 Z"/></clipPath><g clip-path="url(#c1)"><path d="M545.0,625.0 L685.8,770.7 L685.8,900.7 L545.0,755.0 Z" fill="#6b7ea6" fill-opacity=".42"/><use href="#r" fill="#6b7ea6"/></g><clipPath id="c2"><path d="M845.0,625.0 A300,165 0 0 1 685.8,770.7 L685.8,900.7 A300,165 0 0 0 845.0,755.0 Z"/></clipPath><g clip-path="url(#c2)"><path d="M845.0,625.0 A300,165 0 0 1 685.8,770.7 L685.8,900.7 A300,165 0 0 0 845.0,755.0 Z" fill="#080e1c" fill-opacity=".42"/><use href="#r" fill="#080e1c"/></g><clipPath id="c3"><path d="M386.0,764.9 A300,165 0 0 1 245.0,625.0 L245.0,755.0 A300,165 0 0 0 386.0,894.9 Z"/></clipPath><g clip-path="url(#c3)"><path d="M386.0,764.9 A300,165 0 0 1 245.0,625.0 L245.0,755.0 A300,165 0 0 0 386.0,894.9 Z" fill="#080e1c" fill-opacity=".42"/><use href="#r" fill="#080e1c"/></g><clipPath id="c4"><path d="M545.0,625.0 L386.0,764.9 A300,165 0 1 1 809.9,547.5 Z"/></clipPath><g clip-path="url(#c4)"><path d="M545.0,625.0 L386.0,764.9 A300,165 0 1 1 809.9,547.5 Z" fill="#16223a" fill-opacity=".42"/><use href="#r" fill="#16223a"/></g><clipPath id="c5"><path d="M545.0,625.0 L809.9,547.5 A300,165 0 0 1 685.8,770.7 Z"/></clipPath><g clip-path="url(#c5)"><path d="M545.0,625.0 L809.9,547.5 A300,165 0 0 1 685.8,770.7 Z" fill="#4a5a7a" fill-opacity=".42"/><use href="#r" fill="#4a5a7a"/></g><clipPath id="c6"><path d="M550.0,255.0 L428.0,405.7 L428.0,535.7 L550.0,385.0 Z"/></clipPath><g clip-path="url(#c6)"><path d="M550.0,255.0 L428.0,405.7 L428.0,535.7 L550.0,385.0 Z" fill="#3d4f78" fill-opacity=".42"/><use href="#r" fill="#3d4f78"/></g><clipPath id="c7"><path d="M428.0,405.7 A300,165 0 0 1 251.6,272.2 L251.6,402.2 A300,165 0 0 0 428.0,535.7 Z"/></clipPath><g clip-path="url(#c7)"><path d="M428.0,405.7 A300,165 0 0 1 251.6,272.2 L251.6,402.2 A300,165 0 0 0 428.0,535.7 Z" fill="#080e1c" fill-opacity=".42"/><use href="#r" fill="#080e1c"/></g><clipPath id="c8"><path d="M550.0,255.0 L428.0,405.7 A300,165 0 0 1 251.6,272.2 Z"/></clipPath><g clip-path="url(#c8)"><path d="M550.0,255.0 L428.0,405.7 A300,165 0 0 1 251.6,272.2 Z" fill="#8797b8" fill-opacity=".42"/><use href="#r" fill="#8797b8"/></g><path d="M545.0,625.0 L809.9,547.5" stroke="#fff" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M386.0,764.9 A300,165 0 0 1 245.0,625.0" stroke="#c89a5c" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M845.0,625.0 A300,165 0 0 1 685.8,770.7" stroke="#c89a5c" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M685.8,770.7 L545.0,625.0 L386.0,764.9" stroke="#fff" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M685.8,900.7 L545.0,755.0 L386.0,894.9" stroke="#fff" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M545.0,625.0 L545.0,755.0" stroke="#fff" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M383.9,766.8 A304,167 0 1 1 687.7,772.6" stroke="#c89a5c" stroke-opacity=".9" stroke-width="18" fill="none" stroke-linecap="round"/><path d="M428.0,405.7 A300,165 0 0 1 251.6,272.2" stroke="#c89a5c" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M428.0,405.7 L550.0,255.0 L550.0,385.0 L428.0,535.7" stroke="#fff" stroke-width="7" fill="none" stroke-linejoin="round"/><path d="M426.4,407.7 A304,167 0 0 1 247.7,272.5" stroke="#c89a5c" stroke-opacity=".9" stroke-width="18" fill="none" stroke-linecap="round"/></g></symbol></defs></svg>
+
+<script id="pie-cloud-builder">
+(function (global) {
+  "use strict";
+
+  var DEFAULT_SOURCE = [
+    '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Sky Pie</title><meta name="viewport" content="width=device-width, initial-scale=1"></head>',
+    '<body class="sky"><main class="band" role="listbox" aria-label="Pies"><section class="pie" data-kind="html"><h2>Pricing</h2><ul class="files">',
+    '<li><a href="skypie://open?path=%2Fdocs%2Fexplainer.html">explainer.html</a></li><li><a href="skypie://open?path=%2FREADME.md">README.md</a></li>',
+    '<style>:root{--sky-top:#0b3d91;--sky-mid:#1e5bbf;--sky-bottom:#3f86e0;--crust:#c89a5c;--accent-sunset:#ff8a3d;--accent-rose:#ff5e7e}</style>',
+    '<script>const pies=await ipc.listPies();for(const pie of pies.pies){band.append(renderPie(pie,{size:48,onOpen:openPlate}));}</' + 'script>',
+    '<svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 100 L100 10 A90 90 0 0 1 190 100 Z" fill="var(--pie-tone-1)"/></svg>',
+    '<nav class="topbar"><div class="lights"></div><input class="address" value="skypie://sky"><button>Share</button><button>+ pie</button></nav>',
+    '<article class="artifact"><iframe sandbox="allow-scripts" srcdoc="&lt;!doctype html&gt;" title="explainer.html"></iframe></article>',
+    '<meta property="og:title" content="Sky Pie"><meta property="og:description" content="A reading room for the files your agents make.">',
+    '<footer><a href="https://github.com/contract-hero/skypie-core">skypie-core</a> · Apache-2.0 · <a href="/desktop/">Desktop</a> · <a href="/ios/">iOS</a></footer></body></html>'
+  ];
+
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      var t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function fmt(n) { return Math.round(n * 100) / 100; }
+
+  /* A fluffy, lobed silhouette: a radial function with 3 harmonics plus a
+     row of bigger "lobes" on the upper half and a flattened base. Returns
+     the path d string. The centre is (cx, cy) and R is the mean radius. */
+  function cloudPath(seed, cx, cy, R) {
+    var rnd = mulberry32(seed);
+    var lobeCount = 6 + Math.floor(rnd() * 3);          // 6..8 big lobes
+    var lobes = [];
+    for (var i = 0; i < lobeCount; i++) {
+      lobes.push({ a: (i / lobeCount) * Math.PI * 2 + rnd() * 0.5, w: 0.18 + rnd() * 0.12, h: 0.22 + rnd() * 0.2 });
+    }
+    var h1 = { k: 2, a: 0.02 + rnd() * 0.03, p: rnd() * 6.28 };
+    var h2 = { k: 3, a: 0.02 + rnd() * 0.02, p: rnd() * 6.28 };
+    var N = 96, pts = [];
+    for (var j = 0; j < N; j++) {
+      var t = (j / N) * Math.PI * 2;
+      var r = 1 + h1.a * Math.cos(h1.k * t + h1.p) + h2.a * Math.cos(h2.k * t + h2.p);
+      for (var l = 0; l < lobes.length; l++) {
+        var d = Math.atan2(Math.sin(t - lobes[l].a), Math.cos(t - lobes[l].a));
+        var g = Math.exp(-(d * d) / (2 * lobes[l].w * lobes[l].w));
+        r += lobes[l].h * g;
+      }
+      var x = cx + R * r * Math.cos(t) * 1.15;
+      var y = cy + R * r * Math.sin(t) * 0.9;
+      var base = cy + R * 0.62;
+      if (y > base) y = base + (y - base) * 0.12;   // the flat cloud base
+      pts.push([x, y]);
+    }
+    // Catmull-Rom → cubic Bézier for a smooth outline
+    var d = "M" + fmt(pts[0][0]) + "," + fmt(pts[0][1]);
+    for (var k = 0; k < N; k++) {
+      var p0 = pts[(k - 1 + N) % N], p1 = pts[k], p2 = pts[(k + 1) % N], p3 = pts[(k + 2) % N];
+      var c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      var c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += "C" + fmt(c1x) + "," + fmt(c1y) + " " + fmt(c2x) + "," + fmt(c2y) + " " + fmt(p2[0]) + "," + fmt(p2[1]);
+    }
+    return d + "Z";
+  }
+
+  /* A sector from the centre, angles in degrees clockwise from north,
+     large enough to cover the whole cloud. */
+  function sectorPath(cx, cy, big, a0, a1) {
+    var pt = function (a) { var r = (a - 90) * Math.PI / 180; return fmt(cx + big * Math.cos(r)) + "," + fmt(cy + big * Math.sin(r)); };
+    var d = "M" + cx + "," + cy + " L" + pt(a0);
+    for (var a = a0 + 6; a < a1; a += 6) d += " L" + pt(a);
+    return d + " L" + pt(a1) + " Z";
+  }
+
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+
+  function makePieCloud(opts) {
+    var id = opts.id;
+    var W = opts.width || 240, H = opts.height || 200;
+    var rows = opts.rows || 34;
+    var source = opts.source || DEFAULT_SOURCE;
+    var cx = W / 2, cy = H / 2 - 4, R = Math.min(W, H) * 0.36;
+    var depth = Math.round(H * 0.05);
+    var total = 0, i;
+    for (i = 0; i < opts.wedges.length; i++) total += opts.wedges[i].count;
+    // wedge angles, clockwise from north; tones cycle 1→2→3 with no equal neighbours at the seam
+    var wedges = [], a = 0;
+    for (i = 0; i < opts.wedges.length; i++) {
+      var span = (opts.wedges[i].count / total) * 360;
+      var tone = (i % 3) + 1;
+      if (i === opts.wedges.length - 1 && wedges.length > 1 && tone === wedges[0].tone) tone = tone === 3 ? 2 : 3;
+      wedges.push({ kind: opts.wedges[i].kind, count: opts.wedges[i].count, tone: tone, start: a, end: a + span, mid: a + span / 2 });
+      a += span;
+    }
+    var cloud = cloudPath(opts.seed || 1, cx, cy, R);
+    var pitch = H / rows, fs = pitch * 1.3;
+    var out = [];
+    out.push('<svg class="pie-cloud" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(opts.label || "Pie") + '" data-cx="' + cx + '" data-cy="' + cy + '">');
+    out.push('<defs>');
+    out.push('<clipPath id="' + id + '-cloud"><path d="' + cloud + '"/></clipPath>');
+    for (i = 0; i < wedges.length; i++) {
+      out.push('<clipPath id="' + id + '-w' + i + '"><path d="' + sectorPath(cx, cy, R * 3, wedges[i].start, wedges[i].end) + '"/></clipPath>');
+    }
+    // the text rows: one symbol, reused per wedge with a different fill
+    out.push('<symbol id="' + id + '-rows" overflow="visible"><g font-size="' + fmt(fs) + '" xml:space="preserve">');
+    for (i = 0; i < rows; i++) {
+      var line = source[i % source.length];
+      var shift = (i * 7) % Math.max(1, line.length - 20);
+      line = line.slice(shift) + " " + line.slice(0, shift);
+      out.push('<text x="0" y="' + fmt(pitch * (i + 0.9)) + '" textLength="' + W + '" lengthAdjust="spacingAndGlyphs">' + esc(line) + '</text>');
+    }
+    out.push('</g></symbol>');
+    out.push('</defs>');
+    // the side wall: the same cloud, pushed down by `depth`, in the wall tone
+    out.push('<g class="wall-g" transform="translate(0,' + depth + ')">');
+    out.push('<path class="wall" d="' + cloud + '"/>');
+    out.push('<g clip-path="url(#' + id + '-cloud)" opacity="0.55"><use href="#' + id + '-rows" fill="var(--pie-tone-3)"/></g>');
+    out.push('<path class="wall-outline" d="' + cloud + '"/>');
+    out.push('</g>');
+    // the top face: one wedge group per kind, text rows clipped by cloud ∩ sector
+    out.push('<g class="top">');
+    for (i = 0; i < wedges.length; i++) {
+      var w = wedges[i];
+      out.push('<g class="wedge" data-kind="' + w.kind + '" data-mid="' + fmt(w.mid) + '" data-front="false">');
+      out.push('<g clip-path="url(#' + id + '-cloud)"><g class="spin" transform="rotate(0 ' + cx + ' ' + cy + ')">');
+      out.push('<g clip-path="url(#' + id + '-w' + i + ')"><g class="unspin" transform="rotate(0 ' + cx + ' ' + cy + ')"><rect class="face" x="-' + W + '" y="-' + H + '" width="' + (W * 3) + '" height="' + (H * 3) + '" fill="var(--pie-tone-' + w.tone + ')"/><use href="#' + id + '-rows" fill="var(--pie-tone-' + w.tone + ')"/></g></g>');
+      out.push('<path class="sep" d="' + sectorPath(cx, cy, R * 1.9, w.start, w.end) + '"/>');
+      out.push('</g></g></g>');
+    }
+    out.push('<path class="crust" d="' + cloud + '"/>');
+    out.push('</g>');
+    out.push('</svg>');
+    return { svg: out.join(""), wedges: wedges, state: { rot: 0 } };
+  }
+
+  /* Turn a rendered pie cloud by `rot` degrees around its vertical axis:
+     the sectors spin in-plane while the text stays horizontal, the wedge
+     that faces the viewer (south) is marked data-front and lifted out. */
+  function rotatePieCloud(svg, rot) {
+    var cx = +svg.dataset.cx, cy = +svg.dataset.cy;
+    var spins = svg.querySelectorAll(".spin"), unspins = svg.querySelectorAll(".unspin");
+    var i;
+    for (i = 0; i < spins.length; i++) spins[i].setAttribute("transform", "rotate(" + rot + " " + cx + " " + cy + ")");
+    for (i = 0; i < unspins.length; i++) unspins[i].setAttribute("transform", "rotate(" + (-rot) + " " + cx + " " + cy + ")");
+    var wedges = svg.querySelectorAll(".wedge"), best = null, bestD = 1e9;
+    for (i = 0; i < wedges.length; i++) {
+      var mid = (+wedges[i].dataset.mid + rot) % 360; if (mid < 0) mid += 360;
+      var d = Math.abs(((mid - 180 + 540) % 360) - 180);   // distance from south
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    for (i = 0; i < wedges.length; i++) {
+      var front = i === best;
+      wedges[i].setAttribute("data-front", front ? "true" : "false");
+      if (front) {
+        var r = ((+wedges[i].dataset.mid + rot) - 90) * Math.PI / 180;
+        wedges[i].setAttribute("transform", "translate(" + fmt(Math.cos(r) * 7) + "," + fmt(Math.sin(r) * 7) + ")");
+        wedges[i].parentNode.appendChild(wedges[i]);
+        var crust = svg.querySelector(".top > .crust"); if (crust) crust.parentNode.insertBefore(crust, wedges[i]);
+      } else {
+        wedges[i].removeAttribute("transform");
+      }
+    }
+    return svg.querySelectorAll(".wedge")[best] ? svg.querySelectorAll(".wedge")[best].dataset.kind : null;
+  }
+
+  global.makePieCloud = makePieCloud;
+  global.rotatePieCloud = rotatePieCloud;
+})(window);
+</script>
+
+<script>
+(function () {
+  "use strict";
+  /* Decorative pie clouds in the header. Same builder and drift as the mockup. */
+  var PIES = [
+    { seed: 11, x: 58, y: 16, w: 130, px: 14, py: 9, pw: 96, wedges: [{ kind: "html", count: 5 }, { kind: "md", count: 3 }, { kind: "code", count: 2 }] },
+    { seed: 23, x: 72, y: 60, w: 190, px: 50, py: 6, pw: 110, wedges: [{ kind: "html", count: 7 }, { kind: "image", count: 4 }, { kind: "md", count: 2 }] },
+    { seed: 37, x: 89, y: 20, w: 150, px: 86, py: 10, pw: 96, wedges: [{ kind: "md", count: 6 }, { kind: "html", count: 2 }, { kind: "data", count: 3 }] },
+    { seed: 53, x: 95, y: 82, w: 120, px: 92, py: 96, pw: 90, wedges: [{ kind: "data", count: 6 }, { kind: "html", count: 3 }, { kind: "code", count: 3 }] },
+    { seed: 67, x: 45, y: 6, w: 100, px: 8, py: 97, pw: 90, wedges: [{ kind: "md", count: 5 }, { kind: "html", count: 2 }, { kind: "code", count: 1 }] }
+  ];
+  var DRIFT = [
+    { name: "drift-a", dur: "58s", delay: "-12s" },
+    { name: "drift-b", dur: "74s", delay: "-30s" },
+    { name: "drift-c", dur: "46s", delay: "-5s" },
+    { name: "drift-d", dur: "88s", delay: "-40s" },
+    { name: "drift-a", dur: "66s", delay: "-22s" }
+  ];
+  var host = document.getElementById("clouds");
+  if (!host || typeof makePieCloud !== "function") return;
+  PIES.forEach(function (p, i) {
+    var built = makePieCloud({ id: "hub-" + i, seed: p.seed, wedges: p.wedges, label: "" });
+    var cloud = document.createElement("div");
+    cloud.className = "cloud";
+    cloud.style.setProperty("--x", p.x + "%"); cloud.style.setProperty("--y", p.y + "%");
+    cloud.style.setProperty("--w", p.w + "px");
+    cloud.style.setProperty("--px", p.px + "%"); cloud.style.setProperty("--py", p.py + "%");
+    cloud.style.setProperty("--pw", p.pw + "px");
+    var drift = document.createElement("div");
+    drift.className = "drift";
+    var d = DRIFT[i % DRIFT.length];
+    drift.style.setProperty("--drift-name", d.name);
+    drift.style.setProperty("--drift-dur", d.dur);
+    drift.style.setProperty("--drift-delay", d.delay);
+    drift.innerHTML = built.svg;
+    var svg = drift.querySelector("svg");
+    svg.setAttribute("aria-hidden", "true"); svg.removeAttribute("role");
+    if (typeof rotatePieCloud === "function") rotatePieCloud(svg, (i * 47) % 360);
+    cloud.appendChild(drift); host.appendChild(cloud);
+  });
+})();
+</script>
 </body>
 </html>

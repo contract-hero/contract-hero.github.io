@@ -1,324 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contract Hero — Claude Code plugins for Sui Move and developer tooling</title>
-  <meta name="description" content="A small set of Claude Code plugins maintained under Contract Hero: Sui Move tooling (sui-pilot), a multi-agent build system (code-forge), a Codex bridge, an HTML deliverables toolkit, and interactive coding courses driven by an MCP runtime.">
-  <link rel="canonical" href="https://contract-hero.github.io/">
-  <style>
-    :root {
-      --bg: #fafaf7;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e5e7eb;
-      --accent: #0f4c75;
-      --accent-soft: #e6eef4;
-      --code-bg: #f1f5f9;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 17px;
-      line-height: 1.55;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrap {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    a { color: var(--accent); }
-    a:hover { text-decoration: underline; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Contract Hero — everything Álvaro Lillo has built</title>
+<meta name="description" content="Talks, workshop repos, skypies, Claude Code plugins, token standards, courses and a game by Álvaro Lillo Igualada, in one place.">
+<link rel="canonical" href="https://contract-hero.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contract-hero.github.io/">
+<meta property="og:title" content="Contract Hero — everything Álvaro Lillo has built">
+<meta property="og:description" content="Talks, workshop repos, skypies, Claude Code plugins, token standards, courses and a game, in one place.">
+<meta property="og:site_name" content="Contract Hero">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@TheContractHero">
+<link rel="icon" type="image/png" href="assets/contract-hero.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Phosphor theme, copied from plugin-marketplace/docs so the hub reads as a sibling page. */
+  :root{
+    --bg:#0b0f0c;
+    --bg-2:#0e1410;
+    --bg-code:#060907;
+    --ink:#dfe6e0;
+    --ink-2:#b9c6bd;
+    --muted:#9fb0a4;
+    --muted-2:#8ea095;
+    --dim:#6b7d70;
+    --g:#3df08a;
+    --g-line:#245c3b;
+    --line:#1f2a22;
+    --r:2px;
+    --wrap:1180px;
+    --sans:"Space Grotesk",system-ui,sans-serif;
+    --on-g:#04140a;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  h1,h2,h3{font-weight:500;letter-spacing:-.02em;line-height:1.05}
+  h1{font-size:clamp(44px,6vw,84px)}
+  h2{font-size:clamp(28px,3.4vw,44px)}
+  h2::before{content:"## ";color:var(--g);font-family:var(--mono);font-size:.6em;vertical-align:middle}
+  .kicker{font-family:var(--mono);font-size:12.5px;color:var(--g);display:block}
+  .inline,.sub a,.frame p a{color:var(--g);border-bottom:1px solid var(--g-line)}
+  code{font-family:var(--mono);color:var(--g);font-size:.9em;overflow-wrap:anywhere}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--g);color:var(--on-g);padding:8px 12px;z-index:60;font-family:var(--mono);font-size:13px}
+  .skip:focus{left:8px}
+  a:focus-visible{outline:2px solid var(--g);outline-offset:2px}
 
-    header.site {
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    header.site .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.01em;
-    }
-    .brand-mark {
-      width: 28px;
-      height: 28px;
-      flex: none;
-    }
-    nav.site-nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 15px;
-    }
-    nav.site-nav a:hover { color: var(--accent); }
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:var(--bg)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;font-family:var(--mono);font-size:13px}
+  .brand{display:flex;align-items:center;gap:9px;color:var(--g);font-family:var(--mono);font-size:13px;flex:0 0 auto}
+  .brand img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+  .brand::after{content:"_"}
+  @media (prefers-reduced-motion:no-preference){
+    .brand::after{animation:blink 1.1s steps(1) infinite}
+  }
+  @keyframes blink{50%{opacity:0}}
+  .nav-links{display:flex;align-items:center;gap:22px}
+  .nav-links a{color:var(--muted);white-space:nowrap}
+  .nav-links a:hover{color:var(--g)}
+  .nav-links a.nav-cta{color:var(--on-g);background:var(--g);padding:7px 13px;border-radius:var(--r);font-weight:500}
 
-    section { padding: 56px 0; }
-    section + section { border-top: 1px solid var(--border); }
+  /* ---------- hero ---------- */
+  .hero{padding:72px 0 64px;border-top:0}
+  .hero .kicker::before{content:"$ whoami  → ";color:var(--dim)}
+  .hero h1{margin:18px 0 0;max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--g)}
+  .lede{margin-top:20px;max-width:60ch;font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);line-height:1.4}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;padding:11px 18px;border-radius:var(--r)}
+  .btn-primary{background:var(--g);color:var(--on-g);box-shadow:0 0 18px rgba(61,240,138,.25)}
+  .btn-ghost{border:1px solid var(--g-line);color:var(--g)}
+  .btn-ghost:hover{border-color:var(--g)}
 
-    .hero {
-      padding-top: 72px;
-      padding-bottom: 56px;
-    }
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-    }
-    h1 {
-      font-size: clamp(28px, 4.2vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin: 0 0 18px 0;
-      max-width: 24ch;
-    }
-    h1 em {
-      font-style: normal;
-      color: var(--accent);
-    }
-    .lede {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 64ch;
-      margin: 0 0 28px 0;
-    }
-    .install {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text);
-      overflow-x: auto;
-      max-width: 640px;
-    }
-    .install .c { color: var(--muted); }
-    .install .v { color: var(--accent); }
+  /* ---------- section frame ---------- */
+  section{border-top:1px solid var(--line);padding:64px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head .idx{font-family:var(--mono);color:var(--g);font-size:12.5px;display:block;margin-bottom:8px}
+  .sub{color:var(--muted-2);margin-top:10px;font-size:15px;max-width:70ch}
 
-    h2 {
-      font-size: 22px;
-      letter-spacing: -0.01em;
-      margin: 0 0 8px 0;
-    }
-    .sec-sub {
-      color: var(--muted);
-      margin: 0 0 28px 0;
-      max-width: 70ch;
-    }
+  /* ---------- cards ---------- */
+  .grid,.video{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--bg);padding:18px;display:flex;flex-direction:column;min-width:0}
+  .card h3{font-size:20px;margin-bottom:8px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .card h3 a{overflow-wrap:anywhere}
+  .card h3 a:hover{color:var(--g)}
+  .card p{color:var(--muted);font-size:14px;flex:1}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;align-items:center}
+  .chip{font-family:var(--mono);font-size:11px;color:var(--muted-2);border:1px solid var(--line);padding:2px 8px;border-radius:var(--r)}
+  .chip.warm{color:var(--g);border-color:var(--g-line)}
+  .chips a.repo{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .chips a.repo:hover{color:var(--g)}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 20px 18px 20px;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.15s ease, transform 0.15s ease;
-    }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-    .card .name {
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      font-size: 14px;
-      color: var(--accent);
-      margin: 0 0 8px 0;
-      font-weight: 600;
-    }
-    .card .title {
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin: 0 0 10px 0;
-    }
-    .card .desc {
-      font-size: 14.5px;
-      color: var(--muted);
-      flex: 1;
-      margin: 0 0 16px 0;
-    }
-    .card .links {
-      display: flex;
-      gap: 14px;
-      font-size: 14px;
-      align-items: center;
-    }
-    .card .links a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-    }
-    .card .links a:hover { text-decoration: underline; }
-    .card .links .muted { color: var(--muted); }
+  /* ---------- video ---------- */
+  .frame{background:var(--bg);padding:14px;min-width:0}
+  .frame .ratio{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;background:var(--bg-code);border:1px solid var(--line)}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .frame h3{margin:14px 0 4px;font-size:18px}
+  .frame p{margin:0;font-size:14px;color:var(--muted)}
+  .frame.todo .ratio{display:grid;place-items:center;color:var(--dim);font:500 13px/1.5 var(--mono);text-align:center;padding:20px}
 
-    footer.site {
-      border-top: 1px solid var(--border);
-      background: var(--surface);
-      padding: 28px 0 36px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    footer.site .wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer.site a { color: var(--muted); }
-  </style>
+  /* ---------- featured product panel ---------- */
+  .panel{border:1px solid var(--line);padding:32px;background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+  .panel h3{font-size:clamp(24px,2.6vw,32px);margin:10px 0 14px}
+  .panel p{color:var(--ink-2);max-width:66ch}
+  .panel-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .repos{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:18px;font-family:var(--mono);font-size:12.5px}
+  .repos a{color:var(--muted);border-bottom:1px solid var(--line)}
+  .repos a:hover{color:var(--g);border-color:var(--g-line)}
+  .product{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  .product-mark{width:72px;height:72px;border-radius:50%;object-fit:cover}
+  @media(max-width:640px){.product{grid-template-columns:1fr}.panel{padding:22px}}
+  @media(max-width:720px){.nav-links{overflow-x:auto;gap:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav-links::-webkit-scrollbar{display:none}}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:44px 0 56px;color:var(--dim);font-family:var(--mono);font-size:12.5px}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+  .foot .brand{margin-bottom:12px}
+  .foot p{color:var(--dim);max-width:42ch;line-height:1.7}
+  .foot-links{display:flex;flex-direction:column;gap:9px}
+  .foot-links a{color:var(--muted)}
+  .foot-links a:hover{color:var(--g)}
+  .foot-col h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px;font-weight:500}
+  .colophon{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="/">
-      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="2" y="2" width="28" height="28" rx="6" fill="#0f4c75"/>
-        <path d="M10 16 L14 20 L22 12" stroke="#fafaf7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      </svg>
-      <span>Contract Hero</span>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Contract Hero home">
+      <img src="assets/contract-hero.png" alt="" width="28" height="28">
+      Contract&nbsp;Hero
     </a>
-    <nav class="site-nav">
-      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
-      <a href="https://github.com/contract-hero">GitHub</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#talks">Talks</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#products">Products</a>
+      <a href="#plugins">Plugins</a>
+      <a href="#standards">Standards</a>
+      <a href="#courses">Courses</a>
+      <a href="#games">Games</a>
+      <a class="nav-cta" href="https://contracthero.dev">contracthero.dev ↗</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Claude Code plugins</span>
-    <h1>Plugins for <em>Sui Move</em> and developer tooling.</h1>
-    <p class="lede">
-      A small set of Claude Code plugins — Sui Move tooling with bundled docs and an LSP-backed MCP server, a multi-agent build system, a bridge to OpenAI Codex, an HTML deliverables toolkit, and interactive coding courses that run inside a session.
-    </p>
-    <pre class="install"><span class="c"># in a Claude Code session</span>
-/plugin marketplace add <span class="v">contract-hero/plugin-marketplace</span>
-/plugin install <span class="v">sui-pilot@contract-hero</span></pre>
-  </div>
-</section>
+<main id="main">
+  <span id="top"></span>
 
-<section id="plugins">
-  <div class="wrap">
-    <h2>Developer tooling</h2>
-    <p class="sec-sub">Sui Move stack helpers and general-purpose Claude Code extensions.</p>
-    <div class="grid">
-
-      <article class="card">
-        <p class="name">sui-pilot</p>
-        <h3 class="title">Sui Move development plugin</h3>
-        <p class="desc">LSP integration, bundled docs (Sui, Walrus, Seal, TS SDK, Move Book, sui-prover), code quality and review skills, plus formal-verification specs.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/sui-pilot/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/sui-pilot">Repo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">code-forge</p>
-        <h3 class="title">Multi-agent build system</h3>
-        <p class="desc">TDD-as-phase orchestration with script-coordinated parallel review, a best-of-N implementer, and the forge-guard hook for discipline.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/code-forge/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/code-forge">Repo</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">codex-bridge</p>
-        <h3 class="title">Bridge to OpenAI Codex CLI</h3>
-        <p class="desc">/codex for direct calls and /claudex for multi-round Claude ↔ Codex prompt refinement before plan-mode execution.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/codex-bridge">View repo →</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <p class="name">toolkit</p>
-        <h3 class="title">HTML deliverable toolkit</h3>
-        <p class="desc">Bundles html-artifact (one-off visual deliverables), publish-html (turn a local .html into a shareable URL), for-dummies (auto-derived intros), and move-call-chains.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/toolkit">View repo →</a>
-        </div>
-      </article>
-
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">Contract Hero</span>
+      <h1>Everything Álvaro Lillo <em>has built.</em></h1>
+      <p class="lede">Talks and workshops, the repos behind them, skypies, Claude Code plugins, token standards, courses and a game. <a class="inline" href="https://contracthero.dev">contracthero.dev</a> is the short version; this page lists everything.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://contracthero.dev">contracthero.dev →</a>
+        <a class="btn btn-ghost" href="https://contracthero.dev/resume.pdf">résumé (PDF)</a>
+        <a class="btn btn-ghost" href="https://github.com/alilloig" rel="me">GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/alilloig" rel="me">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://x.com/TheContractHero" rel="me">X</a>
+      </div>
     </div>
+  </section>
 
-    <h2 style="margin-top: 56px;">Courses</h2>
-    <p class="sec-sub">A learning framework (Agentic Community College) plus content plugins that teach specific domains end-to-end.</p>
-    <div class="grid">
-
-      <article class="card">
-        <p class="name">agentic-community-college</p>
-        <h3 class="title">Learning framework</h3>
-        <p class="desc">Runs reference-seeded coding lessons through MCP. Ships course-engine, course-conductor, course-creator, and lesson-creator skills with a declarative probe runtime.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/agentic-community-college/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/agentic-community-college">Repo</a>
+  <!-- TALKS -->
+  <section id="talks">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">01</span><h2>Talks and workshops</h2><p class="sub">Sui workshops delivered live at hackathons. Bootcamps: five days of Move and Sui plus a one-day hackathon, in Bucharest, Paris and Ankara.</p></div>
+      <div class="video">
+        <div class="frame">
+          <div class="ratio">
+            <iframe src="https://www.youtube-nocookie.com/embed/g0zjIF_lbdQ" title="EVM x Sui | ETHGlobal" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <h3>EVM x Sui | ETHGlobal</h3>
+          <p>Workshop for EVM developers who start on Sui. <a href="https://www.youtube.com/watch?v=g0zjIF_lbdQ">Watch on YouTube</a>.</p>
         </div>
-      </article>
-
-      <article class="card">
-        <p class="name">acc-deepbook-course</p>
-        <h3 class="title">Sui DeepBook course</h3>
-        <p class="desc">Hands-on lessons that walk learners through building Sui DeepBook integrations end-to-end. Requires the agentic-community-college plugin to run.</p>
-        <div class="links">
-          <a href="https://contract-hero.github.io/acc-deepbook-course/">Visit site →</a>
-          <a class="muted" href="https://github.com/contract-hero/acc-deepbook-course">Repo</a>
+        <div class="frame todo" data-todo="second ETHGlobal workshop video URL (see profile.md open TODOs)">
+          <div class="ratio">second workshop video<br>coming soon</div>
+          <h3>Second ETHGlobal workshop</h3>
+          <p>Video link coming soon. <!-- TODO: paste the second workshop video URL here (profile.md Open TODOs) --></p>
         </div>
-      </article>
-
-      <article class="card">
-        <p class="name">acc-evm-wal</p>
-        <h3 class="title">Walrus storage on EVM</h3>
-        <p class="desc">A short Foundry-based lesson that teaches Walrus decentralized storage by walking learners through building a WalrusAnchor Solidity contract.</p>
-        <div class="links">
-          <a href="https://github.com/contract-hero/acc-evm-wal">View repo →</a>
-        </div>
-      </article>
-
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="site">
+  <!-- WORKSHOP REPOS -->
+  <section id="workshops">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">02</span><h2>Workshop example repos</h2><p class="sub">Code written for workshops and hackathon tracks. Each repo is small on purpose: one idea, runnable.</p></div>
+      <ul class="grid">
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/sui-pbo">sui-pbo</a></h3>
+          <p>Reference implementation of the Physical Backed Objects (PBO) standard for Sui, the Sui port of EIP-5791.</p>
+          <div class="chips"><span class="chip">Move</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/deepbook-snippets">deepbook-snippets</a></h3>
+          <p>Reference snippets for DeepBook.</p>
+          <div class="chips"><span class="chip">TypeScript</span><span class="chip">DeepBook</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/flow-hack">flow-hack</a></h3>
+          <p>An attempt to reconstruct the Flow blockchain hack of 27 December 2025.</p>
+          <div class="chips"><span class="chip">Cadence</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/x402">x402</a> <span class="chip">fork</span></h3>
+          <p>A payments protocol for the internet, built on HTTP. A fork kept for workshop use.</p>
+          <div class="chips"><span class="chip">HTTP</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/walrus-code-memory">walrus-code-memory</a> <span class="chip">fork</span></h3>
+          <p>An iteration on Walrus memory for storing Claude Code and Codex self-generated memories.</p>
+          <div class="chips"><span class="chip">Walrus</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/acc-evm-wal">acc-evm-wal</a></h3>
+          <p>Workshop material packaged as an ACC course: 6 lessons, 75 tests.</p>
+          <div class="chips"><span class="chip">course</span><span class="chip">Walrus</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">03</span><h2>Products</h2><p class="sub">Software with an install path, not only a repo.</p></div>
+      <div class="panel product">
+        <img class="product-mark" src="assets/contract-hero.png" alt="" width="72" height="72">
+        <div>
+          <span class="kicker">Featured</span>
+          <h3>skypies</h3>
+          <p>A reading room for the files your agents make. Open local HTML and Markdown, follow changes as they happen, and send an artifact directly to another device. Free and open source, Apache-2.0.</p>
+          <div class="panel-links" data-todo="404 until skypie-core GitHub Pages is enabled after the brand/landing PR merges">
+            <a class="btn btn-primary" href="https://contract-hero.github.io/skypie-core/">skypies landing →</a>
+            <a class="btn btn-ghost" href="https://contract-hero.github.io/skypie-core/desktop/">macOS app</a>
+            <a class="btn btn-ghost" href="https://contract-hero.github.io/skypie-core/ios/">iOS companion</a>
+          </div>
+          <div class="repos" aria-label="skypies repositories">
+            <a href="https://github.com/contract-hero/skypie-core">skypie-core</a>
+            <a href="https://github.com/contract-hero/skypie-desktop">skypie-desktop</a>
+            <a href="https://github.com/contract-hero/skypie-ios">skypie-ios</a>
+            <a href="https://github.com/contract-hero/skypie-plugin">skypie-plugin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLUGINS -->
+  <section id="plugins">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">04</span><h2>Claude Code plugins</h2><p class="sub">All of them install from one marketplace: <code>/plugin marketplace add contract-hero/plugin-marketplace</code>. Browse the <a href="https://contract-hero.github.io/plugin-marketplace/">marketplace page</a>.</p></div>
+      <ul class="grid">
+        <li class="card">
+          <h3><a href="https://contract-hero.github.io/sui-pilot/">sui-pilot</a></h3>
+          <p>Claude Code plugin for the full Sui stack: bundled docs across 6 corpora, a Move LSP bridge, a Sui Prover wrapper, commands and skills for code quality, security review and verification.</p>
+          <div class="chips"><a class="repo" href="https://github.com/contract-hero/sui-pilot">repo ↗</a><span class="chip">Sui</span><span class="chip">Move</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://contract-hero.github.io/code-forge/">code-forge</a></h3>
+          <p>Multi-agent build system: design spec, interactive architecture playground and docs.</p>
+          <div class="chips"><a class="repo" href="https://github.com/contract-hero/code-forge">repo ↗</a><span class="chip">agents</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://contract-hero.github.io/agentic-community-college/">agentic-community-college</a></h3>
+          <p>Course runtime for Claude Code: a course plugin splits a lesson into chapters defined by tests, and a conductor agent implements each chapter in a seeded workspace. An exploratory proof of concept.</p>
+          <div class="chips"><a class="repo" href="https://github.com/contract-hero/agentic-community-college">repo ↗</a><span class="chip">MCP</span><span class="chip">courses</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/toolkit">toolkit</a></h3>
+          <p>Self-contained HTML deliverable skills: html-artifact, publish-html, for-dummies, move-call-chains.</p>
+          <div class="chips"><span class="chip">skills</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/skypie-plugin">skypie</a></h3>
+          <p>The skypies plugin: MCP server launcher, pairing hook and an artifact-links skill. <code>/plugin install skypie@contract-hero</code></p>
+          <div class="chips"><span class="chip">MCP</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/codex-bridge">codex-bridge</a></h3>
+          <p>Bridge to the OpenAI Codex CLI from Claude Code: <code>/codex</code> execution and <code>/claudex</code> multi-round prompt refinement.</p>
+          <div class="chips"><span class="chip">Codex</span></div>
+        </li>
+        <li class="card">
+          <h3>sui-agent-tank <span class="chip">private</span></h3>
+          <p>Not public yet.</p>
+          <div class="chips"><span class="chip">Sui</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STANDARDS -->
+  <section id="standards">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">05</span><h2>Open source standards</h2><p class="sub">Work merged upstream into ecosystem repositories.</p></div>
+      <ul class="grid">
+        <li class="card">
+          <h3><a href="https://github.com/onflow/flow-ft">Fungible Token Switchboard</a></h3>
+          <p>One receiver capability for any token. Contract, tests and docs; part of the Flow FT standard, deployed on mainnet at <code>0xf233dcee88fe0abe</code>.</p>
+          <div class="chips"><span class="chip">onflow/flow-ft</span><span class="chip">Cadence</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/onflow/flow-ft">Fungible Tokens Metadata FLIP</a></h3>
+          <p>The FLIP (merged August 2022) and the FungibleTokenMetadataViews contract, with the views implemented on ExampleToken.</p>
+          <div class="chips"><span class="chip">onflow/flow-ft</span><span class="chip">FLIP</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/onflow/band-oracle-contracts">Band Protocol oracle for Flow</a></h3>
+          <p>Port of the Band oracle from Solidity to Cadence: testnet, mainnet-ready, then the Cadence 1.0 upgrade.</p>
+          <div class="chips"><span class="chip">onflow/band-oracle-contracts</span><span class="chip">Cadence</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/alilloig/merkle-mountain-range-contracts">Merkle Mountain Ranges</a></h3>
+          <p>Merkle Mountain Range contracts in Move and Cadence.</p>
+          <div class="chips"><span class="chip">Move</span><span class="chip">Cadence</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">06</span><h2>Courses</h2><p class="sub">Courses that run inside Claude Code on the Agentic Community College runtime. Chapters are defined by tests; the agent implements them with you.</p></div>
+      <ul class="grid">
+        <li class="card">
+          <h3><a href="https://contract-hero.github.io/acc-deepbook-course/">acc-deepbook-course</a></h3>
+          <p>Hands-on lessons that walk through building Sui DeepBook integrations end to end. 4 lessons.</p>
+          <div class="chips"><a class="repo" href="https://github.com/contract-hero/acc-deepbook-course">repo ↗</a><span class="chip">DeepBook</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/acc-evm-wal">acc-evm-wal</a></h3>
+          <p>Workshop material packaged as an ACC course: 6 lessons, 75 tests.</p>
+          <div class="chips"><span class="chip">Walrus</span></div>
+        </li>
+        <li class="card">
+          <h3><a href="https://github.com/contract-hero/acc-claude-sdk">acc-claude-sdk</a> <span class="chip warm">in progress</span></h3>
+          <p>Build agents with the Claude Agent SDK (TypeScript), chapter by chapter, with tests as the contract.</p>
+          <div class="chips"><span class="chip">Claude Agent SDK</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head"><span class="idx">07</span><h2>Games</h2></div>
+      <ul class="grid">
+        <li class="card">
+          <h3><a href="https://github.com/alilloig/trade-wars">Trade Wars</a></h3>
+          <p>A fully on-chain, massively multiplayer, interplanetary trading game on Sui: produce, trade, and expand your reach among the stars.</p>
+          <div class="chips"><span class="chip">Move</span><span class="chip">TypeScript</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
   <div class="wrap">
-    <span>Contract Hero · Claude Code plugins, maintained openly.</span>
-    <span>
-      <a href="https://github.com/contract-hero/plugin-marketplace">Marketplace</a>
-      · <a href="https://github.com/contract-hero">GitHub org</a>
-    </span>
+    <div class="foot">
+      <div class="foot-col">
+        <a class="brand" href="#top">
+          <img src="assets/contract-hero.png" alt="" width="28" height="28">
+          Contract&nbsp;Hero
+        </a>
+        <p>Álvaro Lillo Igualada. Madrid, Spain, remote.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <div class="foot-links">
+          <a href="https://contracthero.dev">contracthero.dev</a>
+          <a href="https://contracthero.dev/resume.pdf">résumé</a>
+          <a href="https://github.com/alilloig">github</a>
+          <a href="https://github.com/contract-hero">contract-hero org</a>
+          <a href="https://www.linkedin.com/in/alilloig">linkedin</a>
+          <a href="https://x.com/TheContractHero">x</a>
+          <a href="mailto:alilloig@gmail.com">mail</a>
+        </div>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© Álvaro Lillo · Contract Hero</span>
+      <span>Built with Claude Code</span>
+    </div>
   </div>
 </footer>
 

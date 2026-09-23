@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "space grotesk",
+        "createdAt": "2026-09-22T21:43:34.121Z",
+        "reason": "Phosphor theme copied from the plugin-marketplace pages; Space Grotesk is the shared brand face"
+      }
+    ]
+  }
+}
